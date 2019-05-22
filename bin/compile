@@ -40,12 +40,8 @@ echo "moved"
 rm wildfly-$WILDFLY_VERSION.tar.gz
 echo "done"
 
-echo -n "-----> Deploying standalone file(s)... "
-cp standalone/*.xml $JBOSS_HOME/standalone/configuration/
-echo "done"
-
 echo -n "-----> Deploying war file(s)... "
-cp target/*.war $JBOSS_HOME/standalone/deployments/
+cp target/*. $JBOSS_HOME/standalone/deployments/
 echo "done"
 
 echo "-----> Creating configuration..."
