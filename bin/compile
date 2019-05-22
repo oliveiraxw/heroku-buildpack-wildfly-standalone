@@ -40,7 +40,7 @@ echo "moved"
 rm wildfly-$WILDFLY_VERSION.tar.gz
 echo "done"
 
-echo -n "-----> Deploying war file(s)... "
+echo -n "-----> Deploying ear/war file(s)... "
 cp target/*. $JBOSS_HOME/standalone/deployments/
 echo "done"
 
