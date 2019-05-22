@@ -41,7 +41,8 @@ rm wildfly-$WILDFLY_VERSION.tar.gz
 echo "done"
 
 echo -n "-----> Deploying ear file(s)... "
-cp target/*.ear $JBOSS_HOME/standalone/deployments/
+cp -a /target/. /$JBOSS_HOME/standalone/deployments/
+
 echo "done"
 
 echo "-----> Creating configuration..."
