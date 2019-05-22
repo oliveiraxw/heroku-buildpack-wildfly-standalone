@@ -40,8 +40,8 @@ echo "moved"
 rm wildfly-$WILDFLY_VERSION.tar.gz
 echo "done"
 
-echo -n "-----> Deploying ear/war file(s)... "
-cp target/ $JBOSS_HOME/standalone/deployments/
+echo -n "-----> Deploying ear file(s)... "
+cp target/*.ear $JBOSS_HOME/standalone/deployments/
 echo "done"
 
 echo "-----> Creating configuration..."
