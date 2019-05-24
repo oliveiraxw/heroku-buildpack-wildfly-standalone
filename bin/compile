@@ -20,8 +20,8 @@ curl --retry 3 --silent --location $JVM_COMMON_BUILDPACK | tar xzm -C /tmp/jvm-c
 
 install_java_with_overlay ${BUILD_DIR}
 
-WILDFLY_VERSION="10.1.0.Final"
-WILDFLY_SHA1="9ee3c0255e2e6007d502223916cefad2a1a5e333"
+WILDFLY_VERSION="16.0.0.Final"
+WILDFLY_SHA1="b55ed374ab4f8534c2343ac9a283c71fa6d22dfe"
 JBOSS_HOME=".jboss/wildfly-${WILDFLY_VERSION}"
 
 cd $BUILD_DIR
@@ -39,6 +39,12 @@ mv wildfly-$WILDFLY_VERSION $JBOSS_HOME
 echo "moved"
 rm wildfly-$WILDFLY_VERSION.tar.gz
 echo "done"
+
+echo -n "-----> Deploying standalone file... "
+cp -r standalone $JBOSS_HOME/standalone/configuration
+
+echo -n "-----> Deploying module/lib file(s)... "
+cp -r modules $JBOSS_HOME/modules
 
 echo -n "-----> Deploying ear file(s)... "
 cp -r target $JBOSS_HOME/standalone/deployments
