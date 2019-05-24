@@ -41,7 +41,7 @@ rm wildfly-$WILDFLY_VERSION.tar.gz
 echo "done"
 
 echo -n "-----> Deploying standalone file... "
-cp -r standalone $JBOSS_HOME/standalone/configuration
+cp -r standalone/standalone.xml $JBOSS_HOME/standalone/configuration
 
 echo -n "-----> Deploying module/lib file(s)... "
 cp -r modules $JBOSS_HOME/modules
