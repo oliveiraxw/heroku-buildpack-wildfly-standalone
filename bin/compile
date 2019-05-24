@@ -21,7 +21,7 @@ curl --retry 3 --silent --location $JVM_COMMON_BUILDPACK | tar xzm -C /tmp/jvm-c
 install_java_with_overlay ${BUILD_DIR}
 
 WILDFLY_VERSION="16.0.0.Final"
-WILDFLY_SHA1="f2e6bbf36d0948ee2b7597d313dabda343a0d603"
+WILDFLY_SHA1="287c21b069ec6ecd80472afec01384093ed8eb7d"
 JBOSS_HOME=".jboss/wildfly-${WILDFLY_VERSION}"
 
 cd $BUILD_DIR
@@ -31,8 +31,8 @@ mkdir -p .jboss
 echo -n "-----> Installing Wildfly ${WILDFLY_VERSION}... "
 curl -O http://download.jboss.org/wildfly/$WILDFLY_VERSION/wildfly-$WILDFLY_VERSION.tar.gz
 echo "downloaded"
-#sha1sum wildfly-$WILDFLY_VERSION.tar.gz | grep $WILDFLY_SHA1 > /dev/null 2>&1
-#echo "verified"
+sha1sum wildfly-$WILDFLY_VERSION.tar.gz | grep $WILDFLY_SHA1 > /dev/null 2>&1
+echo "verified"
 tar xf wildfly-$WILDFLY_VERSION.tar.gz
 echo "extracted"
 mv wildfly-$WILDFLY_VERSION $JBOSS_HOME
