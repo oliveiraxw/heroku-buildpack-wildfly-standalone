@@ -32,8 +32,8 @@ echo -n "-----> Installing Wildfly ${WILDFLY_VERSION}... "
 curl https://download.jboss.org/wildfly/$WILDFLY_VERSION/wildfly-$WILDFLY_VERSION.tar.gz
 echo "downloaded"
 file wildfly-$WILDFLY_VERSION.tar.gz
-#sha1sum wildfly-$WILDFLY_VERSION.tar.gz | grep $WILDFLY_SHA1 > /dev/null 2>&1
-#echo "verified"
+sha1sum wildfly-$WILDFLY_VERSION.tar.gz | grep $WILDFLY_SHA1 > /dev/null 2>&1
+echo "verified"
 tar xf wildfly-$WILDFLY_VERSION.tar.gz
 echo "extracted"
 mv wildfly-$WILDFLY_VERSION $JBOSS_HOME
